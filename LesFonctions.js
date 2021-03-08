@@ -31,6 +31,14 @@ function verifierNumeroDeTelephone(numero)
 
   }
 }
+/*pour vérifier le numéro de téléphone, entrez un numéro
+ l'énoncé nous demande une longeur de 9 mais le test est plus grand 
+ que 9. donc il ne peut pas retourner vrai comme vous le demandez.
+ il va retourner faux si on respecte l'énoncé*/
+ console.log(verifierNumeroDeTelephone("222333444"));
+ console.log(verifierNumeroDeTelephone("22233344410"));
+ console.log(verifierNumeroDeTelephone("222333444ABCS"));
+
 
 
 /*Cette fonction permet de vérifier si un nombre es un entier. 
@@ -59,6 +67,8 @@ function verifierEntier(entier)
        }
     }
 }
+console.log(verifierEntier(10));
+console.log(verifierEntier("ABCD"));
 
 
 
@@ -102,3 +112,5 @@ function verifierCodePostal(codePostal) {
 
  
 }
+console.log(verifierCodePostal('J2S3T5'));
+console.log(verifierCodePostal(000715));
