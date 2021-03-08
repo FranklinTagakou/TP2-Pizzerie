@@ -29,6 +29,11 @@
   maPizza.ChangeAlimentPoids(50);
 
 
+  //tests
+  console.log(maPizza.nom);
+  console.log(maPizza.poids);
+
+
 
   //Class croute 
   class Croute extends Aliment {
@@ -58,7 +63,13 @@
   }
   var Farcie = new Croute ('Farcie', 100, 15, 'large', 'Moyenne');
 
+  console.log(Farcie.prixCroute);
 
+//modifer le prix de la pizza grace à la méthode
+
+Farcie.ChangeCroutePrix(17);
+
+console.log(Farcie.prix);
 
 
   //Class Fromage
@@ -81,6 +92,11 @@ class Fromage extends Aliment {
 
    var Camember = new Fromage ('Camember', 100, 3);
 
+   Camember.ChangeFromagePrix(7);
+
+   // test 
+   console.log(Camember.prixFromage);
+
 
    //Class garniture 
  class Garniture extends Aliment {
@@ -96,6 +112,11 @@ class Fromage extends Aliment {
 //modification avec les méthodes
 
 var Champignon = new Garniture ('Champignon', 100, 3);
+Champignon.ChangeGarnitureprix(12);
+
+//test 
+
+console.log(Champignon.prixGarniture);
 
 
 
@@ -103,7 +124,11 @@ var Champignon = new Garniture ('Champignon', 100, 3);
 class Epices extends Aliment {
     super(nom,poids)
 }
-Piment = new Epices ('Piment', 1 ); 
+Piment = new Epices ('Piment', 1 );
+
+//test
+console.log(Piment.nom);
+console.log(Piment.poids); 
 
 
 
@@ -148,6 +173,12 @@ class Pizza {
   var pizzaFamille = new Pizza (01, 5, "moyenne", [Camember], [Champignon], CalculerPrixComplet, 15);
   var mozarella = new Fromage("mozarella", 10, 7);
 
+  pizzaFamille.AjouterFromage(mozarella);
+
+
+  console.log(pizzaFamille.fromage);
+  
+
 
   
   //Classe Commande
@@ -190,8 +221,7 @@ class Pizza {
 
 var Commande1 = new Commande("001","01-01-2021", "11:30", [pizzaFamille], montantTotal);
 
-
-
+console.log(Commande1.pizzas);
 
 
 //Class client
@@ -230,5 +260,7 @@ class Client {
 
 
 var Client1 = new Client("Smith", "Robert", "450-009-1234", "3000 Ave Boulée", Commande1);
+
+console.log(Client1.AfficherInformation);
 
 
