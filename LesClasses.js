@@ -183,11 +183,13 @@ class Pizza {
   
   //Classe Commande
   class Commande {
-    constructor(numeroCmd, dateCmd, heureCmd, pizzas, montantTotal) {
+    constructor(numeroCmd, dateCmd, heureCmd, pizzas, tps, tvq, montantTotal) {
     this.numeroCmd = numeroCmd;
     this.dateCmd = dateCmd;
     this.heureCmd = heureCmd;
     this.pizzas = pizzas;
+    this.tps = tps;
+    this.tvq = tvq;
     this.montantTotal = montantTotal;
   }
 
