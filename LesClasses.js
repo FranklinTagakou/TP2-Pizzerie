@@ -264,3 +264,16 @@ var Client1 = new Client("Smith", "Robert", "450-009-1234", "3000 Ave Boulée", 
 console.log(Client1.AfficherInformation);
 
 
+
+
+
+
+class taille{
+    constructor (nom, diamètre, facteur){
+        this.nom = nom;
+        this.diamètre = diamètre;
+        this.facteur = facteur;
+    }
+}
+
+
