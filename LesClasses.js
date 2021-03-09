@@ -191,14 +191,21 @@ class Pizza {
   
   //Classe Commande
   class Commande {
+<<<<<<< HEAD
     constructor(numeroCmd, dateCmd, heureCmd, pizzas, client, montantTotal,) {
+=======
+    tps=5/100;
+    tvq=9.975/100;
+    t=tps+tvq;
+    constructor(numeroCmd, dateCmd, heureCmd, pizzas, client, montantTotal){
+>>>>>>> tax
     this.numeroCmd = numeroCmd;
     this.dateCmd = dateCmd;
     this.heureCmd = heureCmd;
     this.pizzas = pizzas;
     this.client = client;
     this.montantTotal = montantTotal;
-  }
+    }
 
   ChangeCommandeNumeroCmd(NouveauNuméro){
       this.numeroCmd = NouveauNuméro;
@@ -213,22 +220,28 @@ class Pizza {
   }
 
   MontantTotal(){
-      var pizzas = 0;
-      var i = 0;
-
-      for (i = 0; i < pizzas; i++){
-        pizzas += i;
-      }
-      this.montantTotal = pizzas
-      return this.montantTotal
-  }
+    var pizzas = 0;
+    var i = 0;
+    
+    for (i = 0; i < pizzas; i++){
+    pizzas += i;
+    }
+    
+    this.montantTotal = pizzas
+    return this.montantTotal*t
+    }
 
   AjouterPizza(pizzas){
     this.pizza(this.pizzas.length) = pizzas;
   }
 }
 
+<<<<<<< HEAD
 var Commande1 = new Commande("001","01-01-2021", "11:30", [pizzaFamille], "Mario Lanza", montantTotal);
+=======
+
+var Commande1 = new Commande("001","01-01-2021", "11:30", [pizzaFamille], montantTotal);
+>>>>>>> tax
 
 console.log(Commande1.pizzas);
 
