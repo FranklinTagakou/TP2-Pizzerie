@@ -121,9 +121,8 @@ console.log(Champignon.prixGarniture);
 
 
 //Pizza Epicé 
-class Epices extends Aliment {
-    super(nom,poids)
-}
+class Epices extends Aliment{} 
+
 Piment = new Epices ('Piment', 1 );
 
 //test
@@ -155,8 +154,9 @@ class Pizza {
     }
   
     CalculerPrixComplet(){
-       return this.prixComplet = prixCroute + prixFromage + prixGarniture;  
-    }
+     
+        return this.prixComplet = prixCroute + (prixFromage*this.taille.facteur) + prixGarniture;
+        }
   
     ChangePizzaTempsDeCuisson(NouveauTempsDeCuisson){
         this.tempsDeCuisson = NouveauTempsDeCuisson;
@@ -168,14 +168,22 @@ class Pizza {
     AjouterGarniture(garniture){
       this.garniture(this.garniture.length) = garniture;
     }
-  }
+    ModifierTaillePizza(NouvelleTaillePizza){
+        this.taille = NouvelleTaillePizza;
+    }
 
-  var pizzaFamille = new Pizza (01, 5, "moyenne", [Camember], [Champignon], CalculerPrixComplet, 15);
+}
+
+  var pizzaFamille = new Pizza (01, 5, "moyenne", [Camember], [Champignon], prixComplet, 15);
   var mozarella = new Fromage("mozarella", 10, 7);
 
   pizzaFamille.AjouterFromage(mozarella);
 
+  //test pour les cas du facteur
+  var grandePizza = new Pizza (02, 10, "grande", [Camember], [Champignon], prixComplet, 25)
+  grandePizza.ModifierTaillePizza(10)
 
+  grandePizza.CalculerPrixComplet()
   console.log(pizzaFamille.fromage);
   
 
