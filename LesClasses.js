@@ -183,11 +183,12 @@ class Pizza {
   
   //Classe Commande
   class Commande {
-    constructor(numeroCmd, dateCmd, heureCmd, pizzas, montantTotal) {
+    constructor(numeroCmd, dateCmd, heureCmd, pizzas, client, montantTotal,) {
     this.numeroCmd = numeroCmd;
     this.dateCmd = dateCmd;
     this.heureCmd = heureCmd;
     this.pizzas = pizzas;
+    this.client = client;
     this.montantTotal = montantTotal;
   }
 
@@ -219,19 +220,18 @@ class Pizza {
   }
 }
 
-var Commande1 = new Commande("001","01-01-2021", "11:30", [pizzaFamille], montantTotal);
+var Commande1 = new Commande("001","01-01-2021", "11:30", [pizzaFamille], "Mario Lanza", montantTotal);
 
 console.log(Commande1.pizzas);
 
 
 //Class client
 class Client {
-    constructor(nom, prénom, numéroTel, adresse, commmande) {
+    constructor(nom, prénom, numéroTel, adresse) {
     this.nom = nom;
     this.prénom = prénom;
     this.numéroTel = numéroTel;
     this.adresse = adresse;
-    this.commmande = commmande;
   }
 
   ChangeClientnom(NouveauNom){
@@ -249,31 +249,16 @@ class Client {
   ChangeClientadresse(NouvelleAdresse){
       this.adresse = NouvelleAdresse;
   }
-  AjouterCommande(){
-    this.commmande(this.commmande.length) = commmande; 
-  }
+  
   AfficherInformation(){
-    return "Nom:" + this.nom + "\nPrénom:" + this.prénom + "\nTéléphone:" + this.numéroTel + "\nCommande:" + this.commmande;
+    return "Nom:" + this.nom + "\nPrénom:" + this.prénom + "\nTéléphone:" + this.numéroTel;
     
   }
 }
 
 
-var Client1 = new Client("Smith", "Robert", "450-009-1234", "3000 Ave Boulée", Commande1);
+var Client1 = new Client("Smith", "Robert", "450-009-1234", "3000 Ave Boulée");
 
 console.log(Client1.AfficherInformation);
-
-
-
-
-
-
-class taille{
-    constructor (nom, diamètre, facteur){
-        this.nom = nom;
-        this.diamètre = diamètre;
-        this.facteur = facteur;
-    }
-}
 
 
