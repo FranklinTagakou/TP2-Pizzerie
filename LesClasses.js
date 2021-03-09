@@ -226,12 +226,12 @@ console.log(Commande1.pizzas);
 
 //Class client
 class Client {
-    constructor(nom, prénom, numéroTel, adresse, commmande) {
+    constructor(nom, prénom, numéroTel, adresse) {
     this.nom = nom;
     this.prénom = prénom;
     this.numéroTel = numéroTel;
     this.adresse = adresse;
-    this.commmande = commmande;
+    
   }
 
   ChangeClientnom(NouveauNom){
