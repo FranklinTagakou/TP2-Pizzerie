@@ -194,12 +194,11 @@ class Pizza {
     tps=5/100;
     tvq=9.975/100;
     t=tps+tvq;
-    constructor(numeroCmd, dateCmd, heureCmd, pizzas, client, montantTotal,) {
+    constructor(numeroCmd, dateCmd, heureCmd, pizzas, montantTotal,) {
     this.numeroCmd = numeroCmd;
     this.dateCmd = dateCmd;
     this.heureCmd = heureCmd;
     this.pizzas = pizzas;
-    this.client = client;
     this.montantTotal = montantTotal;
   }
 
@@ -232,7 +231,7 @@ class Pizza {
   }
 }
 
-var Commande1 = new Commande("001","01-01-2021", "11:30", [pizzaFamille], "Mario Lanza", montantTotal);
+var Commande1 = new Commande(001,"01-01-2021", "11:30", [pizzaFamille], montantTotal);
 
 console.log(Commande1.pizzas);
 
