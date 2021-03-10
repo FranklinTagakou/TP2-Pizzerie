@@ -232,7 +232,7 @@ class Pizza {
   }
 }
 
-var Commande1 = new Commande(001,"01-01-2021", "11:30", [pizzaFamille], montantTotal);
+var Commande1 = new Commande(001,"01-01-2021", "11:30", [pizzaFamille], "Mario Lanza", montantTotal);
 
 console.log(Commande1.pizzas);
 
