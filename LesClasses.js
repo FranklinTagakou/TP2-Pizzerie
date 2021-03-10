@@ -242,19 +242,19 @@ class Client {
     this.adresse = adresse;
   }
 
-  ChangeClientnom(NouveauNom){
+  ChangeClientNom(NouveauNom){
       this.nom = NouveauNom;
   }
 
-  ChangeClientprénom(NouveauPrénom){
+  ChangeClientPrénom(NouveauPrénom){
       this.prénom = NouveauPrénom;
   }
 
-  ChangeClientnumérotel(NouveauNuméroTel){
+  ChangeClientNumérotel(NouveauNuméroTel){
       this.numérotel = NouveauNuméroTel;
   }
 
-  ChangeClientadresse(NouvelleAdresse){
+  ChangeClientAdresse(NouvelleAdresse){
       this.adresse = NouvelleAdresse;
   }
   
