@@ -221,9 +221,10 @@ class Pizza {
 
       for (i = 0; i < pizzas; i++){
         pizzas += i;
-      }
-      this.montantTotal = pizzas
-      return this.montantTotal
+
+       this.montantTotal = pizzas
+       return this.montantTotal*t
+    }
   }
 
   AjouterPizza(pizzas){
