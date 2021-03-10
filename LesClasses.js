@@ -194,11 +194,12 @@ class Pizza {
     tps=5/100;
     tvq=9.975/100;
     t=tps+tvq;
-    constructor(numeroCmd, dateCmd, heureCmd, pizzas, montantTotal,) {
+    constructor(numeroCmd, dateCmd, heureCmd, pizzas, client, montantTotal,) {
     this.numeroCmd = numeroCmd;
     this.dateCmd = dateCmd;
     this.heureCmd = heureCmd;
     this.pizzas = pizzas;
+    this.client = client;
     this.montantTotal = montantTotal;
   }
 
