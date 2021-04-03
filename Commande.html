@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="lesFonctions.js"></script>
+        <script src="LesClasses.js"></script>
+        <style>
+            .cache{
+                display: none;
+            }
+            
+        </style>
+    </head>
+    <body>
+
+        <a href="Commande.html">Commande</a>
+        <a href="Client.html">Client</a>
+        <a href="Pizza.html">Pizza</a>
+        <a href="#" onclick="afficherOuCacher()">Aliments</a>
+        <br>
+        <div id="sousMenu" class="cache">
+            <a href="Croute.html">Croute</a>
+            <a href="Fromage.html">Frommage</a>
+            <a href="Garniture.html" >Garniture</a>
+        </div>
+
+
+        <h1>Commande</h1>
+
+        <table border="0">
+            <tr>
+                <td><label for="numeroCmd">Numéro:</label></td>
+                <td><input id="numeroCmd" name="numeroCmd"></input></td>
+            </tr>
+            <tr>
+                <td><label for="client">Client:</label></td> <!-- le for dans le label me permet lier chaque label avec son INPUT-->
+                <td><select id="client" name="client"></input></td>
+            </tr>
+
+            <tr>
+                <td><label for="dateCmd">Date:</label></td>
+                <td><input id="dateCmd" name="dateCmd"></input></td>
+            </tr>
+
+            <tr>
+                <td><label for="heureCmd">Heure:</label></td>
+                <td><input id="heureCmd" name="heureCmd"></input></td>
+            </tr>
+
+            <tr>
+                <td><label for="pizzas">Pizzas:</label></td>
+                <td><select id="pizzas" name="pizzas"></td>
+                <td><button type="button" onclick='recupèreElément3("pizzas")'>+</button></td>
+                <td><button id="btn" type="button" onclick="suppression('affichagePizza')">-</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><label id="affichagePizza"></label></td>
+               </tr>
+            <tr>
+                <td><label for="montantTotal">Montant total:</label></td>
+                <td><input id="montantTotal" name="montantTotal"></input>à calculer</td>
+            </tr>
+            <tr>
+                <td colspan="2"><button id="btn" type="button">Vérifier</button></td>
+            </tr> <!-- l'attribut colspan me permet de fusionner des colomnes.-->
+            <tr>
+                <td colspan="2"><button id="btn" type="button">Soumettre</button></td>
+            </tr>
+    
+    
+        </table>
+
+        
+
+    </body>
+    <script>
+
+        chargerListeSelect("client", listeClients);
+        chargerListeSelect("pizzas", listePizzas);
+
+
+    </script>
+</html>
