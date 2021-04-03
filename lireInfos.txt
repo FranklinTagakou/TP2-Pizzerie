@@ -1,0 +1,153 @@
+class Aliments {
+    constructor(nom, poids) {
+        this.nom = nom;
+        this.poids = poids;
+    }
+    lireAliments() {
+        return "nom: " + this.nom + ", poids: " + this.poids;
+    }
+    // ... ... ...
+}
+
+class Croute extends Aliments {
+    constructor(nom, poids, type, prix, taille) {
+        super(nom, poids);
+        this.type = type;
+        this.prix = prix;
+        this.taille = taille;
+    }
+    lireCroute() {
+        return this.lireAliments() +
+            ", type: " + this.type +
+            ", taille: " + this.taille +
+            ", prix: " + this.prix;
+    }
+    // ... ... ...
+}
+
+class Fromage extends Aliments {
+    constructor(nom, poids, prix) {
+        super(nom, poids);
+        this.prix = prix;
+    }
+    lireFromage() {
+        return this.lireAliments() + ", prix: " + this.prix;
+    }
+    // ... ... ...
+}
+
+class Garniture extends Aliments {
+    constructor(nom, poids, prix) {
+        super(nom, poids);
+        this.prix = prix;
+    }
+    lireGarniture() {
+        return this.lireAliments() + ", prix: " + this.prix;
+    }
+    // ... ... ...
+}
+
+class Client {
+    constructor(nom, prenom, telephone, courriel) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.telephone = telephone;
+        this.courriel = courriel;
+    }
+    lireClient() {
+        return "nom: " + this.nom + ", prénom: " + this.prenom +
+            ", téléphone: " + this.telephone + ", courriel: " + this.courriel;
+    }
+    // ... ... ...
+}
+
+class Pizza {
+    constructor(numero, taille, croute, fromages, garnitures, tempsCuisson) {
+        this.numero = numero;
+        this.taille = taille;
+        this.croute = croute;
+        this.fromages = fromages;
+        this.garnitures = garnitures;
+        this.tempsCuisson = tempsCuisson;
+        this.prixComplet = 0;
+        this.calculerPrixComplet();
+    }
+
+    lireNom() { // on le nomme "lireNom" pour simplifier la codification
+        return "Pizza #" + this.numero;
+    }
+    lirePizza() {
+        return "numéro: " + this.numero +
+            ", taille: {" + this.taille.lireTaille() + "} " +
+            ", croûte: {" + this.croute.lireCroute() + "} " +
+            ", fromages: [" + this.lireFromages() + "] " +
+            ", garnitures: [" + this.lireGarnitures() + "] " +
+            ", prix complet: " + this.prixComplet +
+            ", temps de cuisson: " + this.tempsCuisson;
+    }
+    lireFromages() {
+        var s = "";
+        for (const i in this.fromages) {
+            s += "{" + this.fromages[i].lireFromage() + "}, ";
+        }
+        s = s.substr(0, s.length - 2);
+        return s;
+    }
+    lireGarnitures() {
+        var s = "";
+        for (const i in this.garnitures) {
+            s += "{" + this.garnitures[i].lireGarniture() + "}, ";
+        }
+        s = s.substr(0, s.length - 2);
+        return s;
+    }
+
+    // ... ... ...
+
+}
+
+class Commande {
+    constructor(numero, client, date, heure, pizzas) {
+        this.numero = numero;
+        this.client = client;
+        this.date = date;
+        this.heure = heure;
+        this.pizzas = pizzas;
+        this.montantTotal = 0;
+        this.tps = 0.05;
+        this.tvq = 0.0975;
+        this.calculerMontantTotal();
+    }
+    lireCommande() {
+        return "numéro: " + this.numero +
+            ", client: {" + this.client.lireClient() + "}" +
+            ", date: " + this.date + ", heure: " + this.heure +
+            ", pizzas: [" + this.lirePizzas() + "]" +
+            ", montant total: " + this.montantTotal;
+    }
+    lirePizzas() {
+        var s = "";
+        for (const i in this.pizzas) {
+            s += "{" + this.pizzas[i].lirePizza() + "}, ";
+        }
+        s = s.substr(0, s.length - 2);
+        return s;
+    }
+
+    // ... ... ...
+
+}
+
+class Taille {
+    constructor(nom, diametre, facteur) {
+        this.nom = nom;
+        this.diametre = diametre;
+        this.facteur = facteur;
+    }
+
+    lireTaille() {
+        return "nom:" + this.nom + ", diametre:" + this.diametre +
+            ", facteur:" + this.facteur;
+    }
+    // ... ... ...
+}
