@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+
+        <script src="lesFonctions.js"></script>
+        <script src="LesClasses.js"></script>
+        <style>
+            .cache{
+                display: none;
+            }
+            
+        </style>
+    </head>
+    <body>
+  <!--Menu-->
+  <a href="Commande.html">Commande</a>
+  <a href="Client.html">Client</a>
+  <a href="Pizza.html">Pizza</a>
+  <a href="#" onclick="afficherOuCacher()">Aliments</a>
+  <br>
+  <div id="sousMenu" class="cache">
+      <a href="Croute.html">Croute</a>
+      <a href="Fromage.html">Frommage</a>
+      <a href="Garniture.html">Garniture</a>
+  </div>
+
+
+  <h1>Garniture</h1>
+
+  <table border="0">
+    <tr>
+        <td><label for="nomGarniture">Nom:</label></td>
+        <td><input id="nomGarniture" name="nomGarniture"></input></td>
+    </tr>
+    <tr>
+        <td><label for="poidsGarniture">Poids:</label></td> <!-- le for dans le label me permet lier chaque label avec son INPUT-->
+        <td><input id="poidsGarniture" name="poidsGarniture" ></input>(gr)</td>
+    </tr>
+    <tr>
+        <td><label for="prixGarniture">Prix:</label></td>
+        <td><input id="prixGarniture" name="prixGarniture"></input></td>
+    </tr>
+    <tr>
+        <td colspan="2"><button id="btn" type="button">Vérifier</button></td>
+    </tr> <!-- l'attribut colspan me permet de fusionner des colomnes.-->
+    <tr>
+        <td colspan="2"><button id="btn" type="button">Soumettre</button></td>
+    </tr>
+
+
+  </table>
+
+
+
+
+
+
+    </body>
+</html>
