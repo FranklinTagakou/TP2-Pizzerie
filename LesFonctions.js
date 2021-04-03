@@ -1,7 +1,7 @@
 /**
- * Projet : TP 2
+ * Projet : TP 3
  * Auteur : Franklin Tagakou
- * Date : 1 Mars 2021
+ * Date : 17 Mars 2021
  */
 
 /**
@@ -114,3 +114,101 @@ function verifierCodePostal(codePostal) {
 }
 console.log(verifierCodePostal('J2S3T5'));
 console.log(verifierCodePostal(000715));
+
+
+
+
+
+
+
+
+
+
+
+  function afficherOuCacher(){
+    //alert("lien cliqué");
+    //console.log("lien cliqué");
+    var element = document.getElementById("sousMenu") //Language DOM
+    if(element.className == "cache"){
+        element.classList.remove("cache");
+    }
+    else{
+        element.classList.add("cache");
+    }
+}
+
+/**
+ * Fonction qui permet de charger le select à partir d'une liste d'éléments
+ * @param {string} selectId : id du select à charger
+ * @param {object} liste : liste avec les éléments dont les noms seront chargés dans le select
+ */
+function chargerListeSelect(selectId, liste)
+{
+    var s = "<option></option>";
+    for( var i=0; i<liste.length; i++)
+    {
+    /* console.log(liste[i]); */
+    s +='<option value="'+ i +'">' + liste[i].lireNom() + '</option>';
+
+    }
+    element = document.getElementById(selectId);
+    element.innerHTML = s;
+
+}
+function recupèreElément1(selectId){
+    var select = document.getElementById(selectId);
+    var valeur = select.options[select.selectedIndex].value;
+    var listeFromagesChoisis = [];
+    listeFromagesChoisis.push(valeur)
+    document.getElementById("affichageFromage").innerHTML=""+valeur;
+     
+}
+function recupèreElément2(selectId){
+    var select = document.getElementById(selectId);
+    var valeur = select.options[select.selectedIndex].value;
+    var listeFromagesChoisis = [];
+    listeFromagesChoisis.push(valeur)
+    document.getElementById("affichageGarniture").innerHTML=""+valeur;
+     
+}
+function recupèreElément3(selectId){
+    var select = document.getElementById(selectId);
+    var valeur = select.options[select.selectedIndex].value;
+    var listeFromagesChoisis = [];
+    listeFromagesChoisis.push(valeur)
+    document.getElementById("affichagePizza").innerHTML=""+valeur;
+
+    }
+    
+function suppression(selectId){
+        var container = '<td><label id="#"></label></td>';
+        element = document.getElementById(selectId);
+        element.innerHTML = container;  
+      }
+
+function vérifierEntréePizza(){
+    var numéro = document.getElementById("numéroPizza").value;
+    var temps = document.getElementById("tempsCuisson").value;
+    var msg;
+    if(isNaN(numéro) == true || Number.isInteger(numéro) == false){
+        msg = "Erreur: Numéro de la Pizza invalide"
+    }
+   else
+   {
+       msg = "Numéro de la Pizza: " + numéro;
+
+    }
+
+    if(isNaN(temps) == true || Number.isInteger(temps) == false){
+        msg = "Erreur: Temps de cuisson invalide"
+    }
+   else
+   {
+       msg = "Temps de cuisson: " + temps;
+
+    }
+
+
+    document.getElementById("retourPizza").innerHTML = msg;
+}
+
